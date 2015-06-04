@@ -1,0 +1,39 @@
+{
+  "name": "requirejs-steps",
+  "private": true,
+  "version": "0.1.0",
+  "description": "require.js examples",
+  "scripts": {
+    "outdated": "npm outdated --depth=0",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soudev/requirejs-steps.git"
+  },
+  "keywords": [
+    "require.js",
+    "test",
+    "examples"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soudev/requirejs-steps/issues"
+  },
+  "homepage": "https://github.com/soudev/requirejs-steps#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-cached": "^1.1.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-jshint": "^1.11.0",
+    "gulp-lintspaces": "^0.3.0",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-sequence": "^0.3.2",
+    "gulp-util": "^3.0.5",
+    "jshint-stylish": "^2.0.0",
+    "lazypipe": "^0.2.3",
+    "open": "0.0.5"
+  }
+}
