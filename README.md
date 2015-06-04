@@ -26,12 +26,13 @@ npm init
 npm install \
   lazypipe \
   jshint-stylish \
-  run-sequence \
   gulp \
   gulp-load-plugins \
+  gulp-sequence \
   gulp-util \
   gulp-cached \
   gulp-jshint \
+  gulp-lintspaces \
   --save-dev
 
 touch gulpfile.js
