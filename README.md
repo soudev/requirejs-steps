@@ -11,7 +11,7 @@
 
 * Must have [Gulp.js](http://gulpjs.com/) node package installed globally.  `sudo npm install -g gulp`
 
-* Must have [bower](http://bower.io/) node package installed globally
+* Must have [bower](http://bower.io/) node package installed globally. `sudo npm install -g bower`
 
 
 ## Commands on Mac
@@ -24,6 +24,7 @@
 npm init
 
 npm install \
+  open \
   lazypipe \
   jshint-stylish \
   gulp \
@@ -33,6 +34,7 @@ npm install \
   gulp-cached \
   gulp-jshint \
   gulp-lintspaces \
+  gulp-connect \
   --save-dev
 
 touch gulpfile.js
