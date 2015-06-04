@@ -38,6 +38,16 @@ npm install \
   --save-dev
 
 touch gulpfile.js
+
+bower init
+
+touch .bowerrc
+
+bower install \
+  jquery \
+  requirejs \
+  mustache.js \
+  --save
 ```
 
 ## Commands
