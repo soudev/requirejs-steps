@@ -7,10 +7,17 @@ var gulp       = require('gulp'),
 
 //============================================================================//
 // @begin: configs
+(function() {
+
+var paths = {
+  project: 'src',
+  bower: 'bower_components'
+};
 
 $.config = {
 
   webserver: {
+    root: [paths.project, paths.bower],
     port: 1337
   },
 
@@ -18,20 +25,21 @@ $.config = {
     js: ['gulpfile.js']
   },
 
-  examples: {
+  project: {
 
     js: [
-
+      paths.project + '/**/*.js'
     ],
 
     html: [
-
+      paths.project + '/**/*.html'
     ]
 
   }
 
 };
 
+})();
 // @end: configs
 //============================================================================//
 // @begin: utils
@@ -69,11 +77,17 @@ $.projectInfoMsg = function() {
 //============================================================================//
 // @begin: tasks
 
+// TODO: define jshint
+
+//------------------------------------------------------------------------------
+
+// TODO: define lintspaces
 
 //------------------------------------------------------------------------------
 
 gulp.task('connect', function() {
   $.connect.server({
+    root: $.config.webserver.root,
     port: $.config.webserver.port
   });
   $.open('http://localhost:' + $.config.webserver.port);
