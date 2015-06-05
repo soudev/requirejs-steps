@@ -2,6 +2,8 @@
 
 > basic steps to use require.js
 
+* [Require.js Steps](src/README.md)
+
 
 ## Prerequisites
 
