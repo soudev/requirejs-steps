@@ -7,15 +7,28 @@
 <body>
   <h1>Require.js Steps - 02 (AMD Style)</h1>
 
-  <p><b>TODO:</b> define example</p>
+  <h3>Renders</h3>
 
-  <!-- dep libs -->
-  <script src="/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="/vendor/mustache.js/mustache.min.js"></script>
+  <div id="vanilla-render"></div>
+  <div id="jquery-render"></div>
+
+  <h3>to jQuery</h3>
+
+  <div id="to_jquery"></div>
+
+  <h3>Mustache</h3>
+
+  <div id="mustacheMenu"></div>
+  <div id="mustacheArea"></div>
+
 
   <!-- app -->
-    <!-- TODO: define js files -->
-  <script src="/vendor/requirejs/require.js"></script>
+  <script data-main="require.config" src="/vendor/requirejs/require.js"></script>
+
+    <!-- mustache templates -->
+  <script id="githubOrgTpl" type="x-tmpl-mustache">
+  <b>GitHub Organization:</b> <a href="{{github}}" target="_blank">{{name}}</a>
+  </script>
 
 </body>
 </html>
