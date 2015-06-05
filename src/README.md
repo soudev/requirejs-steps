@@ -12,9 +12,10 @@ function logic() {
 }
 ```
 
+
 * [01](01) - without require.js, js app with namespaces
 
-> good practice
+> good practice, nothing is directly global
 
 ```javascript
 (function(global, undefind) {
@@ -39,11 +40,15 @@ function logic() {
 })(window);
 ```
 
+
 * [02](02) - AMD Style
+
+> Require.js code style
 
 ```javascript
 // AMD Style
 define(['myDependency'], function(myDependency) {  
+
   // private
 
   return {
@@ -52,14 +57,18 @@ define(['myDependency'], function(myDependency) {
 });
 ```
 
+
 * [03](03) - CommonJS Style
+
+> Node.js code style
 
 ```javascript
 // CommonJS Style
-define(function(require) {  
-  var myDependency = require('myDependency');
+define(function(require) {
 
   // private
+
+  var myDependency = require('myDependency');
 
   return {
     /* public */
