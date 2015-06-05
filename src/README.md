@@ -1,4 +1,4 @@
-# Require.js Steps
+# Require.js Steps ([pt-Br](README.pt-Br.md))
 
 * [00](00) - without require.js
 
