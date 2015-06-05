@@ -42,6 +42,76 @@ gulp
 ```
 
 
+## Require.js Steps
+
+* [00](src/00) - without require.js
+
+> avoid, bad practice
+
+```javascript
+var att = 'some att value';
+
+function logic() {
+  return 'something';
+}
+```
+
+* [01](src/01) - without require.js, js app with namespaces
+
+> good practice
+
+```javascript
+(function(global, undefind) {
+
+  // main app namespace
+  var app = global.app = global.app || {};
+
+  // private
+
+  var att = 'some att value';
+
+  function logic() {
+    return 'something';
+  }
+
+  // public - local namespace
+  app.localNamespace = {
+    att: att,
+    logic: logic
+  };
+
+})(window);
+```
+
+* [02](src/02) - AMD Style
+
+```javascript
+// AMD Style
+define(['myDependency'], function(myDependency) {  
+  // private
+
+  return {
+    /* public */
+  };
+});
+```
+
+* [03](src/03) - CommonJS Style
+
+```javascript
+// CommonJS Style
+define(function(require) {  
+  var myDependency = require('myDependency');
+
+  // private
+
+  return {
+    /* public */
+  };
+});
+```
+
+
 ## Commands on Mac
 
 ### Create commands list
