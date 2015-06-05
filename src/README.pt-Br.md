@@ -1,5 +1,19 @@
 # Passos Require.js ([en](README.md))
 
+> O JavaScript (versão até a atual ECMAScript 5.1), não possui um sistema de pacotes
+> nativo da linguagem, com isso precisamos de algo para preencher esta lacuna.
+> Uma opção é o desenvolvedor definir manualmente um sistema de namespaces,
+> ou utilizar alguma solução (no caso o Require.js) para preencher esta lacuna.
+> Outro benefício do uso do Require.js é uma melhor gerência da interdependência
+> dos arquivos JavaScript e a não necessidade de ter multiplas tags de script 
+> no html.
+>
+> **Observação:** a próxima versão do JavaScript (ECMAScript 6) conta com um sistema
+> de pacotes, que irá nativamente preencher a lacuna, porém até o ES6 estar
+> disponível em todos os web browser para uso nativo irá demorar um certo tempo.
+> (2015/06)
+
+
 * [00](00) - sem require.js
 
 > evite, péssima prática, tudo é global
