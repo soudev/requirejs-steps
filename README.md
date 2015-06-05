@@ -1,4 +1,4 @@
-# requirejs-steps
+# requirejs-steps ([pt-Br](README.pt-Br.md))
 
 > basic steps to use require.js
 
