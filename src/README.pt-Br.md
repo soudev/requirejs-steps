@@ -9,10 +9,10 @@
 > rastrear e corrigir
 
 ```javascript
-var att = 'some att value';
+var att = 'algum valor para o atributo';
 
-function logic() {
-  return 'something';
+function logica() {
+  return 'alguma coisa';
 }
 ```
 
