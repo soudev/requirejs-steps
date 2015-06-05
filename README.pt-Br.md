@@ -1,24 +1,24 @@
 # requirejs-steps ([en](README.md))
 
-> basic steps to use require.js
+> passos básicos para utilizar o require.js
 
-* [Require.js Steps](src)
-
-
-## Prerequisites
-
-* Must have [Git](http://git-scm.com/) installed
-
-* Must have [node.js (at least v0.10.x)](http://nodejs.org/) installed with npm (Node Package Manager)
-
-* Must have [Gulp.js](http://gulpjs.com/) node package installed globally.  `sudo npm install -g gulp`
-
-* Must have [bower](http://bower.io/) node package installed globally. `sudo npm install -g bower`
+* [Passos Require.js](src)
 
 
-## Installation Guide
+## Pré-requisitos
 
-Enter the following commands in the terminal
+* Necessário ter o [Git](http://git-scm.com/) instalad
+
+* Necessário ter o [node.js (v0.10.x ou superior)](http://nodejs.org/) instalado com o npm (Node Package Manager)
+
+* Necessário ter o [Gulp.js](http://gulpjs.com/) instalado como pacote global do node. `sudo npm install -g gulp`
+
+* Necessário ter o [bower](http://bower.io/) instalado como pacote global do node. `sudo npm install -g bower`
+
+
+## Guia de Instalação
+
+Digite os comandos abaixo no terminal
 
 ```bash
 git clone https://github.com/soudev/requirejs-steps.git
@@ -27,9 +27,9 @@ npm install
 ```
 
 
-## Commands
+## Comandos
 
-> run gulp
+> Executa o gulp
 
 ```bash
 npm start
@@ -37,16 +37,16 @@ npm start
 
 ### Gulp
 
-> development workflow
+> Fluxo de desenvolvimento
 
 ```bash
 gulp
 ```
 
 
-## Commands on Mac
+## Comandos no Mac
 
-### Create commands list
+### Lista de comandos que criaram o projeto
 
 ```bash
 npm init
@@ -115,6 +115,6 @@ bower install \
   * [[GitHub] teambition / gulp-sequence : ISSUE 2 - Error: thunk already filled on subsequent run](https://github.com/teambition/gulp-sequence/issues/2)
 
 
-## License
+## Licença
 
 - [MIT](LICENSE)
