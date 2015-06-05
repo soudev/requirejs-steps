@@ -7,15 +7,48 @@
 <body>
   <h1>Require.js Steps - 01 (without require.js, js app with namespaces)</h1>
 
-  <p><b>TODO:</b> define example</p>
+  <h3>Renders</h3>
+
+  <div id="vanilla-render"></div>
+  <div id="jquery-render"></div>
+
+  <h3>to jQuery</h3>
+
+  <div id="to_jquery"></div>
+
+  <h3>Mustache</h3>
+
+  <div id="mustacheMenu"></div>
+  <div id="mustacheArea"></div>
 
   <!-- dep libs -->
   <script src="/vendor/jquery/dist/jquery.min.js"></script>
   <script src="/vendor/mustache.js/mustache.min.js"></script>
-  <script src="/vendor/requirejs/require.js"></script>
 
   <!-- app -->
-    <!-- TODO: define js files -->
+    <!-- renders -->
+  <script src="scripts/renders/jquery.js"></script>
+  <script src="scripts/renders/vanilla.js"></script>
+
+    <!-- to jquery -->
+  <script src="scripts/to_jquery/utils/Hello.js"></script>
+  <script src="scripts/to_jquery/utils/Sum.js"></script>
+  <script src="scripts/to_jquery/run.js"></script>
+
+    <!-- mustache -->
+  <script src="scripts/mustaches/compiler.js"></script>
+  <script src="scripts/mustaches/menu.js"></script>
+  <script src="scripts/mustaches/reset.js"></script>
+  <script src="scripts/mustaches/sample1.js"></script>
+  <script src="scripts/mustaches/sample2.js"></script>
+
+    <!-- main -->
+  <script src="scripts/app.js"></script>
+
+    <!-- mustache templates -->
+  <script id="githubOrgTpl" type="x-tmpl-mustache">
+  <b>GitHub Organization:</b> <a href="{{github}}" target="_blank">{{name}}</a>
+  </script>
 
 </body>
 </html>
