@@ -1,8 +1,8 @@
 # Passos Require.js ([en](README.md))
 
-* [00](00) - without require.js
+* [00](00) - sem require.js
 
-> avoid, bad practice, everything is global
+> evite, péssima prática, tudo é global
 
 ```javascript
 var att = 'some att value';
@@ -12,57 +12,57 @@ function logic() {
 }
 ```
 
-* [01](01) - without require.js, js app with namespaces
+* [01](01) - sem require.js, aplicação js com namespaces
 
-> good practice
+> boa prática
 
 ```javascript
 (function(global, undefind) {
 
-  // main app namespace
+  // namespace principal da aplicação
   var app = global.app = global.app || {};
 
-  // private
+  // privado
 
-  var att = 'some att value';
+  var att = 'algum valor para o atributo';
 
-  function logic() {
-    return 'something';
+  function logica() {
+    return 'alguma coisa';
   }
 
-  // public - local namespace
+  // público - namespace local
   app.localNamespace = {
     att: att,
-    logic: logic
+    logica: logica
   };
 
 })(window);
 ```
 
-* [02](02) - AMD Style
+* [02](02) - estilo AMD
 
 ```javascript
-// AMD Style
-define(['myDependency'], function(myDependency) {  
-  // private
+// estilo AMD
+define(['minhaDependencia'], function(minhaDependencia) {  
+  // privado
 
   return {
-    /* public */
+    /* público */
   };
 });
 ```
 
-* [03](03) - CommonJS Style
+* [03](03) - estilo CommonJS
 
 ```javascript
-// CommonJS Style
+// estilo CommonJS
 define(function(require) {  
-  var myDependency = require('myDependency');
+  var myDependency = require('minhaDependencia');
 
-  // private
+  // privado
 
   return {
-    /* public */
+    /* público */
   };
 });
 ```
