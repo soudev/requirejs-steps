@@ -52,7 +52,7 @@ define(['myDependency'], function(myDependency) {
 });
 ```
 
-* **To be defined** [03](03) - CommonJS Style
+* [03](03) - CommonJS Style
 
 ```javascript
 // CommonJS Style
