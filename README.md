@@ -1,6 +1,6 @@
 # requirejs-steps
 
-> **TODO:** define
+> basic steps to use require.js
 
 
 ## Prerequisites
@@ -14,11 +14,37 @@
 * Must have [bower](http://bower.io/) node package installed globally. `sudo npm install -g bower`
 
 
+## Installation Guide
+
+Enter the following commands in the terminal
+
+```bash
+git clone https://github.com/soudev/requirejs-steps.git
+cd requirejs-steps
+npm install
+```
+
+
+## Commands
+
+> TODO: review
+
+```bash
+npm start
+```
+
+### Gulp
+
+> development workflow
+
+```bash
+gulp
+```
+
+
 ## Commands on Mac
 
 ### Create commands list
-
->  TODO: review
 
 ```bash
 npm init
@@ -49,27 +75,14 @@ bower install \
   --save
 ```
 
-## Commands
 
-> TODO: review
+## Links
 
-```bash
-npm start
-```
-
-### Gulp
-
-> TODO: review
-
-```bash
-gulp
-```
+> TODO: define
 
 
 ## License
 
 - [MIT](LICENSE)
 
-
-## Links
 
