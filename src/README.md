@@ -1,6 +1,6 @@
 # Require.js Steps
 
-* **To be defined** [00](00) - without require.js
+* [00](00) - without require.js
 
 > avoid, bad practice, everything is global
 
