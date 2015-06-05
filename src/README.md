@@ -39,7 +39,7 @@ function logic() {
 })(window);
 ```
 
-* **To be defined** [02](02) - AMD Style
+* [02](02) - AMD Style
 
 ```javascript
 // AMD Style
