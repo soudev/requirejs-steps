@@ -46,7 +46,7 @@ gulp
 
 * [00](src/00) - without require.js
 
-> avoid, bad practice
+> avoid, bad practice, everything is global
 
 ```javascript
 var att = 'some att value';
