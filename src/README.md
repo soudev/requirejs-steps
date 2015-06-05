@@ -1,6 +1,6 @@
 # Require.js Steps
 
-* [00](00) - without require.js
+* **To be defined** [00](00) - without require.js
 
 > avoid, bad practice, everything is global
 
@@ -12,7 +12,7 @@ function logic() {
 }
 ```
 
-* [01](01) - without require.js, js app with namespaces
+* **To be defined** [01](01) - without require.js, js app with namespaces
 
 > good practice
 
@@ -39,7 +39,7 @@ function logic() {
 })(window);
 ```
 
-* [02](02) - AMD Style
+* **To be defined** [02](02) - AMD Style
 
 ```javascript
 // AMD Style
@@ -52,7 +52,7 @@ define(['myDependency'], function(myDependency) {
 });
 ```
 
-* [03](03) - CommonJS Style
+* **To be defined** [03](03) - CommonJS Style
 
 ```javascript
 // CommonJS Style
