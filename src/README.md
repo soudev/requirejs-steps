@@ -12,7 +12,7 @@ function logic() {
 }
 ```
 
-* **To be defined** [01](01) - without require.js, js app with namespaces
+* [01](01) - without require.js, js app with namespaces
 
 > good practice
 
