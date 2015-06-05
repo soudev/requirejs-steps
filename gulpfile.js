@@ -1,9 +1,14 @@
 var gulp       = require('gulp'),
     $          = require('gulp-load-plugins')();
 
-    $.open     = require('open');
-    $.lazypipe = require('lazypipe');
-    $.pkg      = require('./package.json');
+$.lazypipe     = require('lazypipe');
+$.pkg          = require('./package.json');
+
+$.browserSync  = require('browser-sync');
+$.reload       = $.browserSync.reload;
+
+// shared streams
+$.streams = {};
 
 //============================================================================//
 // @begin: configs
@@ -45,9 +50,9 @@ $.config = {
 // @begin: utils
 
 /**
- * Log a message or series of messages using chalk's blue color.
- * Can pass in a string, object or array.
- */
+  * Log a message or series of messages using chalk's blue color.
+  * Can pass in a string, object or array.
+  */
 $.log = function(msg) {
   if (typeof(msg) === 'object') {
     for (var item in msg) {
@@ -58,10 +63,6 @@ $.log = function(msg) {
   } else {
     $.util.log($.util.colors.blue(msg));
   }
-};
-
-$.onError = function(err) {
-  $.log(err);
 };
 
 //---
@@ -77,31 +78,111 @@ $.projectInfoMsg = function() {
 //============================================================================//
 // @begin: tasks
 
-// TODO: define jshint
+$.streams.jshint = $.lazypipe()
+  .pipe( $.cached, 'jshint' )
+  .pipe( $.jshint )
+  .pipe( $.jshint.reporter, 'jshint-stylish' )
+  .pipe( $.jshint.reporter, 'fail' );
+
+gulp.task('jshint:tools', function() {
+  return gulp.src( $.config.tools.js )
+    .pipe( $.streams.jshint() );
+});
+
+gulp.task('jshint:project', function() {
+  return gulp.src( $.config.project.js )
+    .pipe( $.streams.jshint() );
+});
+
+gulp.task('jshint', ['jshint:tools', 'jshint:project']);
 
 //------------------------------------------------------------------------------
 
-// TODO: define lintspaces
+$.streams.lintspaces = $.lazypipe()
+  .pipe( $.cached, 'lintspaces' )
+  .pipe( $.lintspaces, { editorconfig: '.editorconfig' } )
+  .pipe( $.lintspaces.reporter );
+
+
+gulp.task('lintspaces:tools', function() {
+  return gulp
+    .src( $.config.tools.js )
+    .pipe( $.streams.lintspaces() );
+});
+
+gulp.task('lintspaces:project:js', function() {
+  return gulp
+    .src( $.config.project.js )
+    .pipe( $.streams.lintspaces() );
+});
+
+gulp.task('lintspaces:project:html', function() {
+  return gulp
+    .src( $.config.project.html )
+    .pipe( $.streams.lintspaces() );
+});
+
+gulp.task('lintspaces:project', ['lintspaces:project:js', 'lintspaces:project:html']);
+
+gulp.task('lintspaces', ['lintspaces:tools', 'lintspaces:project']);
 
 //------------------------------------------------------------------------------
 
-gulp.task('connect', function() {
-  $.connect.server({
-    root: $.config.webserver.root,
-    port: $.config.webserver.port
+gulp.task('validate', ['jshint', 'lintspaces']);
+
+//------------------------------------------------------------------------------
+
+gulp.task('webserver', function() {
+  $.browserSync({
+    port: $.config.webserver.port,
+    server:{
+      baseDir: $.config.webserver.root,
+      middleware: $.config.webserver.middlewares
+    }
   });
-  $.open('http://localhost:' + $.config.webserver.port);
-})
+});
 
 //------------------------------------------------------------------------------
+/*
+  [GitHub ISSUE 2] teambition / gulp-sequence
+  Error: thunk already filled on subsequent run
+  https://github.com/teambition/gulp-sequence/issues/2
+*/
 
-gulp.task('watch', ['connect'], function() {
-  $.log('TODO: define');
+gulp.task('wf:bs:reload', function() {
+  $.reload();
+});
+
+gulp.task('wf:project:html', function( done ) {
+  $.sequence(
+    'lintspaces:project:html',
+    'wf:bs:reload'
+  )(done);
+});
+
+gulp.task('wf:project:js', function( done ) {
+  $.sequence(
+    [
+      'lintspaces:project:js',
+      'jshint:project'
+    ],
+    'wf:bs:reload'
+  )(done);
+});
+
+gulp.task('watch', ['webserver'], function() {
+
+  gulp.watch($.config.project.js, ['wf:project:js']);
+
+  gulp.watch($.config.project.html, ['wf:project:html']);
+
 });
 
 //------------------------------------------------------------------------------
 
-gulp.task('default', ['watch'], function() {
+gulp.task('workflow:default', $.sequence('validate', 'watch'));
+
+gulp.task('default', ['workflow:default'], function() {
   $.projectInfoMsg();
 });
 

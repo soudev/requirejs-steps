@@ -24,9 +24,9 @@
 npm init
 
 npm install \
-  open \
   lazypipe \
   jshint-stylish \
+  browser-sync \
   gulp \
   gulp-load-plugins \
   gulp-sequence \
@@ -34,7 +34,6 @@ npm install \
   gulp-cached \
   gulp-jshint \
   gulp-lintspaces \
-  gulp-connect \
   --save-dev
 
 touch gulpfile.js
@@ -70,6 +69,7 @@ gulp
 ## License
 
 - [MIT](LICENSE)
+
 
 ## Links
 
