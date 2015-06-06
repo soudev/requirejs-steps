@@ -1,6 +1,6 @@
 # requirejs-steps ([en](README.md))
 
-> passos básicos para utilizar o require.js
+> passos básicos para utilizar o [require.js](http://requirejs.org/)
 
 * [Passos Require.js](src)
 
