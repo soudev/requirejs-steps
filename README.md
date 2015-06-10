@@ -4,6 +4,8 @@
 
 * [Require.js Steps](src)
 
+  * [RequireJS has an optimization tool](http://requirejs.org/docs/optimization.html) to concatenate all javascript files on dependencies tree and minify the resulting file
+
 
 ## Prerequisites
 

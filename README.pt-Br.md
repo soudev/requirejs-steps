@@ -4,6 +4,8 @@
 
 * [Passos Require.js](src)
 
+  * O [RequireJS possui uma ferramenta de otimização](http://requirejs.org/docs/optimization.html) para concatenar todos os arquivos javascript na árvore de dependências e minificar o arquivo resultante
+
 
 ## Pré-requisitos
 
